@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer, useRef } from 'react'
+import React from 'react'
 
 import { todoReducer, initialState } from './reducers/todoReducer'
 import TodoSearch from './TodoSearch'
@@ -7,8 +7,8 @@ import AddTodo from './AddTodo'
 import Header from './Header'
 
 const TodoApp = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialState);
-  const [search, setSearch] = useState('');
+  const [state, dispatch] = React.useReducer(todoReducer, initialState);
+  const [search, setSearch] = React.useState('');
 
   const onSearch = (event) => {
     setSearch(event.target.value);

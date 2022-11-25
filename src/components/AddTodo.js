@@ -25,7 +25,7 @@ const AddTodo = ({ dispatch }) => {
     }
     event.preventDefault()
 
-    if (title.trim() != '' && description.trim() != '') {
+    if (title.trim() !== '' && description.trim() !== '') {
       try {
         setError(false)
         setLoading(true)

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import { getAllTodos } from '../api/todos'
 import TodoItem from './TodoItem'
 
 const TodoList = ({ dispatch, todos, query }) => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
+  const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState(false)
 
-  useEffect(async () => {
+  React.useEffect(async () => {
     try {
       setLoading(true)
       const { data } = await getAllTodos()
@@ -22,7 +22,7 @@ const TodoList = ({ dispatch, todos, query }) => {
     }
   }, [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     setError(false)
   }, [todos])
 
